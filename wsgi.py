@@ -1,4 +1,4 @@
-from inventorymanager import app	
+from pescestreetlampdemo import app	
 
 if __name__ == "__main__":
 	app.run()
