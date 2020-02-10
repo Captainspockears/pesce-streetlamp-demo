@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(bg3.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+.login-box{
+    width: 320px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.buttons{
+    margin: 0;
+    padding: 50 0 40px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.buttons1{
+    margin-left: 80;
+    margin-right: 80;
+    padding: 40 0 40px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[name="change"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.login-box input[name="change"]:hover
+{
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+
+.login-box input[name="back"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #f30922;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.login-box input[name="back"]:hover
+{
+    cursor: pointer;
+    color: #000;
+}

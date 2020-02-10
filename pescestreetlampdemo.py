@@ -79,7 +79,7 @@ def check_encrypted_password(password, hashed):
 	return pwd_context.verify(password, hashed)
 
 #CODE STARTS HERE
-app = Flask(__name__)
+app = Flask(__name__, template_folder='static', static_folder='static')
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = 'key'#os.urandom(24)
 
@@ -87,23 +87,41 @@ app.secret_key = 'key'#os.urandom(24)
 def home():
 
 	if 'user' in session:
+		if request.method == "POST":
+			if request.form['submit_button'] == 'Control Lights':
+				return redirect(url_for('control'))
+			if request.form['submit_button'] == 'Settings':
+				return redirect(url_for('settings'))
 
 		return render_template("index.html")
 
 	return redirect(url_for("auth"))
 
-@app.route("/index")
+@app.route("/index", methods=["POST", "GET"])
 def index():
 
 	if 'user' in session:
+		if request.method == "POST":
+			if request.form['submit_button'] == 'Control Lights':
+				return redirect(url_for('control'))
+			if request.form['submit_button'] == 'Settings':
+				return redirect(url_for('settings'))
+
 		return render_template("index.html")
 
 	return redirect(url_for("auth"))
 
-@app.route("/control")
+@app.route("/control", methods=["POST", "GET"])
 def control():
 
 	if 'user' in session:
+		if request.method == "POST":
+			if request.form['submit_button'] == 'ON':
+				return redirect(url_for('on'))
+			if request.form['submit_button'] == 'OFF':
+				return redirect(url_for('off'))
+			if request.form['submit_button'] == 'back':
+				return redirect(url_for('index'))
 
 		return render_template("control.html")
 
@@ -112,12 +130,12 @@ def control():
 @app.route("/on")
 def on():
 	toggleOn(1)
-	return render_template("control.html")
+	return redirect(url_for('control'))
 
 @app.route("/off")
 def off():
 	toggleOff(1)
-	return render_template("control.html")
+	return redirect(url_for('control'))
 
 @app.route("/passwordchange", methods=["POST", "GET"])
 def passwordchange():
