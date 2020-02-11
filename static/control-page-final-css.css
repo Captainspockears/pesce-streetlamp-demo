@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background: url(bg3.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
@@ -52,7 +53,7 @@ h1{
     margin-bottom: 20px;
 }
 
-.login-box input[name="on"]
+.login-box input[value="on"]
 {
     border: none;
     outline: none;
@@ -62,13 +63,13 @@ h1{
     font-size: 18px;
     border-radius: 20px;
 }
-.login-box input[name="on"]:hover
+.login-box input[value="on"]:hover
 {
     cursor: pointer;
     color: #000;
 }
 
-.login-box input[name="off"]
+.login-box input[value="off"]
 {
     border: none;
     outline: none;
@@ -78,7 +79,23 @@ h1{
     font-size: 18px;
     border-radius: 20px;
 }
-.login-box input[name="off"]:hover
+.login-box input[value="off"]:hover
+{
+    cursor: pointer;
+    color: #000;
+}
+
+.login-box input[value="back"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39dc79;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.login-box input[value="back"]:hover
 {
     cursor: pointer;
     color: #000;

@@ -83,7 +83,7 @@ app = Flask(__name__, template_folder='static', static_folder='static')
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = 'key'#os.urandom(24)
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def home():
 
 	if 'user' in session:
@@ -111,22 +111,6 @@ def index():
 
 	return redirect(url_for("auth"))
 
-@app.route("/control", methods=["POST", "GET"])
-def control():
-
-	if 'user' in session:
-		if request.method == "POST":
-			if request.form['submit_button'] == 'ON':
-				return redirect(url_for('on'))
-			if request.form['submit_button'] == 'OFF':
-				return redirect(url_for('off'))
-			if request.form['submit_button'] == 'back':
-				return redirect(url_for('index'))
-
-		return render_template("control.html")
-
-	return redirect(url_for("auth"))
-
 @app.route("/on")
 def on():
 	toggleOn(1)
@@ -136,6 +120,22 @@ def on():
 def off():
 	toggleOff(1)
 	return redirect(url_for('control'))
+
+@app.route("/control", methods=["POST", "GET"])
+def control():
+
+	if 'user' in session:
+		if request.method == "POST":
+			if request.form['submit_button'] == 'on':
+				return redirect(url_for('on'))
+			if request.form['submit_button'] == 'off':
+				return redirect(url_for('off'))
+			if request.form['submit_button'] == 'back':
+				return redirect(url_for('index'))
+
+		return render_template("control.html")
+
+	return redirect(url_for("auth"))
 
 @app.route("/passwordchange", methods=["POST", "GET"])
 def passwordchange():
@@ -147,7 +147,10 @@ def passwordchange():
 		hashpswrd = f.readlines()[0]
 		f.close()
 		if request.method == "POST":
-			try:
+			print(request.form['submit_button'])
+			if request.form['submit_button'] == 'back':
+				return redirect(url_for('settings'))
+			if request.form['submit_button'] == 'Done':
 				curr=request.form["curr"]
 				upt=request.form["upt"]
 				if curr=="" or upt=="":
@@ -162,17 +165,21 @@ def passwordchange():
 					f1.write(hashpswrd)
 					f1.close()
 					return redirect(url_for("auth"))
-				return render_template("passwordchange.html", warn="Incorrect password.")
-			except Exception as e:
-				print(e)
-				return render_template("passwordchange.html", warn="Incomplete fields.")
+				else:
+					return render_template("passwordchange.html", warn="Incorrect password.")
+			return render_template("passwordchange.html", warn="An error occured. Please try again.")
 		else:
 			return render_template("passwordchange.html")
 
-@app.route("/settings")
+@app.route("/settings", methods=["POST", "GET"])
 def settings():
 
 	if 'user' in session:
+		if request.method == "POST":
+			if request.form['submit_button'] == 'Change Password':
+				return redirect(url_for('passwordchange'))
+			if request.form['submit_button'] == 'back':
+				return redirect(url_for('index'))		
 		return render_template("settings.html")
 
 	return redirect(url_for("auth"))
