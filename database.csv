@@ -1,2 +1,2 @@
-num,streetlampid,nodemcuid,status,latitude,longitude
-1,LAMP001,NODE001,False,12.7,8.9
+num,streetlampid,nodemcuid,ledstatus,ldrstatus,latitude,longitude
+1,LAMP001,NODE001,0,1,12.7,8.9

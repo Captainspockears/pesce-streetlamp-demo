@@ -5,30 +5,32 @@ from passlib.context import CryptContext
 
 class streetlamp:
 
-	def __init__(self, num=0, streetlampid=0, nodemcuid=0, status=False, latitude=0.0, longitude=0.0):
+	def __init__(self, num=0, streetlampid=0, nodemcuid=0, ledstatus=0, ldrstatus=0, latitude=0.0, longitude=0.0):
 		self.num = num
 		self.streetlampid = streetlampid
 		self.nodemcuid = nodemcuid
 		self.latitude = latitude
-		self.status = status
+		self.ledstatus = ledstatus
+		self.ldrstatus = ldrstatus
 		self.longitude = longitude
 
 	def putlist(self, itemlist):
 		self.num = itemlist[0]
 		self.streetlampid = itemlist[1]
 		self.nodemcuid = itemlist[2]
-		self.status = itemlist[3]
-		self.latitude = itemlist[4]
-		self.longitude = itemlist[5]
+		self.ledstatus = itemlist[3]
+		self.ldrstatus = itemlist[4]
+		self.latitude = itemlist[5]
+		self.longitude = itemlist[6]
 
 	def getList(self):
-		return [self.num, self.streetlampid, self.nodemcuid, self.status, self.latitude, self.longitude]
+		return [self.num, self.streetlampid, self.nodemcuid, self.ledstatus, self.ldrstatus, self.latitude, self.longitude]
 
 	def printItem(self):
-		print("{},{},{},{},{},{}".format(self.num, self.streetlampid, self.nodemcuid, self.status, self.latitude, self.longitude))
+		print("{},{},{},{},{},{},{}".format(self.num, self.streetlampid, self.nodemcuid, self.ledstatus, self.ldrstatus, self.latitude, self.longitude))
 
 	def getcsvtext(self):
-		return str("{},{},{},{},{},{}".format(self.num, self.streetlampid, self.nodemcuid, self.status, self.latitude, self.longitude))
+		return str("{},{},{},{},{},{},{}".format(self.num, self.streetlampid, self.nodemcuid, self.ledstatus, self.ldrstatus, self.latitude, self.longitude))
 
 def getData():
 	streetlamps = []
@@ -41,29 +43,38 @@ def getData():
 			streetlamps.append(streetlamptemp)
 	return streetlamps
 
-def appendData(num=0, streetlampid=0, nodemcuid=0, status=False, latitude=0.0, longitude=0.0):
-	newstreetlamp = streetlamp(num, code, name, catagory, allocatedto, desc, loc, date, ID)
+def appendData(num=0, streetlampid=0, nodemcuid=0, ledstatus=0, ldrstatus=0, latitude=0.0, longitude=0.0):
+	newstreetlamp = streetlamp(num,streetlampid,nodemcuid,ledstatus,ldrstatus,latitude,longitude)
 	newstreetlamptext = newstreetlamp.getcsvtext()
 	with open('database.csv','a') as fd:
 		fd.write(newstreetlamptext)
 
 def putData(streetlamps):
 	with open('database.csv','w') as fd:
-		fd.write('num,streetlampid,nodemcuid,status,latitude,longitude\n')
+		fd.write('num,streetlampid,nodemcuid,ledstatus,ldrstatus,latitude,longitude\n')
 		for streetlamp in streetlamps:
 			streetlamptext = streetlamp.getcsvtext()
 			fd.write(streetlamptext)
 
 def toggleOn(num):
 	newstreetlamps = getData()
-	newstreetlamps[num-1].status = True
+	newstreetlamps[num-1].ledstatus = '1'
 	putData(newstreetlamps)
 
 def toggleOff(num):
 	newstreetlamps = getData()
-	newstreetlamps[num-1].status = False
+	newstreetlamps[num-1].ledstatus = '0'
 	putData(newstreetlamps)
 
+def toggleldrOn(num):
+	newstreetlamps = getData()
+	newstreetlamps[num-1].ldrstatus = '1'
+	putData(newstreetlamps)
+
+def toggleldrOff(num):
+	newstreetlamps = getData()
+	newstreetlamps[num-1].ldrstatus = '0'
+	putData(newstreetlamps)
 
 pwd_context = CryptContext(
 	schemes=["pbkdf2_sha256"],
@@ -121,6 +132,16 @@ def off():
 	toggleOff(1)
 	return redirect(url_for('control'))
 
+@app.route("/ldron")
+def ldron():
+	toggleOn(1)
+	return redirect(url_for('control'))
+
+@app.route("/ldroff")
+def ldroff():
+	toggleOff(1)
+	return redirect(url_for('control'))
+
 @app.route("/control", methods=["POST", "GET"])
 def control():
 
@@ -130,6 +151,10 @@ def control():
 				return redirect(url_for('on'))
 			if request.form['submit_button'] == 'off':
 				return redirect(url_for('off'))
+			if request.form['submit_button'] == 'ldron':
+				return redirect(url_for('ldron'))
+			if request.form['submit_button'] == 'ldroff':
+				return redirect(url_for('ldroff'))		
 			if request.form['submit_button'] == 'back':
 				return redirect(url_for('index'))
 
@@ -215,10 +240,11 @@ def auth():
 def user(idname):
 
 	streetlamps = getData()
-	status = str(streetlamps[0].status)
+	ledstatus = str(streetlamps[0].ledstatus)
+	ldrstatus = str(streetlamps[0].ldrstatus)
 
 	if idname == 'lamp001':
-		return status
+		return "{}{}".format(ledstatus,ldrstatus)
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', debug=True, use_reloader=True)
