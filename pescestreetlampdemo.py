@@ -134,12 +134,12 @@ def off():
 
 @app.route("/ldron")
 def ldron():
-	toggleOn(1)
+	toggleldrOn(1)
 	return redirect(url_for('control'))
 
 @app.route("/ldroff")
 def ldroff():
-	toggleOff(1)
+	toggleldrOff(1)
 	return redirect(url_for('control'))
 
 @app.route("/control", methods=["POST", "GET"])
