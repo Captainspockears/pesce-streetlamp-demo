@@ -6,6 +6,7 @@ import folium
 import os
 import json
 import time
+import branca
 
 class streetlamp:
 
@@ -103,7 +104,38 @@ def generatemap(streetlights):
 	# Create markers
 	for streetlight in streetlights:
 		#folium.Marker([streetlight.latitude, streetlight.longitude], popup='<strong>{}</strong>'.format(streetlight.streetlampid), tooltip=tooltip).add_to(m)
-		folium.Marker([streetlight.latitude, streetlight.longitude], popup='<p>{}</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form>'.format(streetlight.streetlampid), tooltip=tooltip).add_to(m)
+
+		html = """
+
+		<html>
+		<head>
+		    <link rel="stylesheet" type="text/css" href="{url_for('static', filename='control-page-final-css.css')}">   
+		</head>
+		    <body>
+		    <div class="login-box">
+		    <img src="./static/bulb-icon.png" class="avatar">
+		        <p>""" + streetlight.streetlampid + """<p>
+		            <form class="buttons" action="#" method="post">
+		            <p><b>Streetlight Control<b></p>
+		            <input type="submit" href="#" value="on" name="submit_button" id="on.""" + streetlight.num + """"> 
+		            <input type="submit" href="#" value="off" name="submit_button" id="off.""" + streetlight.num + """"> 
+		            <p>Streetlight LDR</p>
+		            <input type="submit" href="#" value="ldron" name="submit_button" id="ldron.""" + streetlight.num + """"> 
+		            <input type="submit" href="#" value="ldroff" name="submit_button" id="ldroff.""" + streetlight.num + """"> 
+		            </form>
+		        
+		        
+		        </div>
+		    
+		    </body>
+		</html>
+
+		"""
+
+		iframe = branca.element.IFrame(html=html, width=500, height=300)
+		popup = folium.Popup(iframe, max_width=500)
+
+		folium.Marker([streetlight.latitude, streetlight.longitude], popup=popup, tooltip=tooltip).add_to(m)
 
 	# Generate map
 	m.save('./static/map.html')
@@ -136,6 +168,23 @@ def controlpanel():
 		streetlights = getData()
 		generatemap(streetlights)
 		time.sleep(1)
+
+		if request.method == "POST":
+
+			submitvalue = request.form['submit_button'].split('.')
+			print(submitvalue)
+			button = submitvalue[0]
+			num = submitvalue[1]
+
+			if button == 'on':
+				return redirect(url_for('on'))
+			if button == 'off':
+				return redirect(url_for('off'))
+			if button == 'ldron':
+				return redirect(url_for('ldron'))
+			if button == 'ldroff':
+				return redirect(url_for('ldroff'))
+
 		return render_template("map.html")
 
 	return redirect(url_for("auth"))
@@ -155,23 +204,23 @@ def index():
 	return redirect(url_for("auth"))
 
 @app.route("/on")
-def on():
-	toggleOn(1)
+def on(num=1):
+	toggleOn(num)
 	return redirect(url_for('control'))
 
 @app.route("/off")
-def off():
-	toggleOff(1)
+def off(num=1):
+	toggleOff(num)
 	return redirect(url_for('control'))
 
 @app.route("/ldron")
-def ldron():
-	toggleldrOn(1)
+def ldron(num=1):
+	toggleldrOn(num)
 	return redirect(url_for('control'))
 
 @app.route("/ldroff")
-def ldroff():
-	toggleldrOff(1)
+def ldroff(num=1):
+	toggleldrOff(num)
 	return redirect(url_for('control'))
 
 @app.route("/control", methods=["POST", "GET"])
