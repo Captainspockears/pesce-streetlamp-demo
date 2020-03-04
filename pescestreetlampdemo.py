@@ -2,6 +2,10 @@ import csv
 import os
 from flask import Flask, redirect, url_for, render_template, request, send_file, session
 from passlib.context import CryptContext
+import folium
+import os
+import json
+import time
 
 class streetlamp:
 
@@ -89,6 +93,22 @@ def encrypt_password(password):
 def check_encrypted_password(password, hashed):
 	return pwd_context.verify(password, hashed)
 
+def generatemap(streetlights):
+	# Create map object
+	m = folium.Map(location=[12.517669, 76.879102], zoom_start=25)
+
+	# Global tooltip
+	tooltip = 'Click To Control'
+
+	# Create markers
+	for streetlight in streetlights:
+		#folium.Marker([streetlight.latitude, streetlight.longitude], popup='<strong>{}</strong>'.format(streetlight.streetlampid), tooltip=tooltip).add_to(m)
+		folium.Marker([streetlight.latitude, streetlight.longitude], popup='<p>{}</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form>'.format(streetlight.streetlampid), tooltip=tooltip).add_to(m)
+
+	# Generate map
+	m.save('./static/map.html')
+
+
 #CODE STARTS HERE
 app = Flask(__name__, template_folder='static', static_folder='static')
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -105,6 +125,18 @@ def home():
 				return redirect(url_for('settings'))
 
 		return render_template("index.html")
+
+	return redirect(url_for("auth"))
+
+@app.route("/controlpanel", methods=["POST", "GET"])
+def controlpanel():
+
+	if 'user' in session:
+
+		streetlights = getData()
+		generatemap(streetlights)
+		time.sleep(1)
+		return render_template("map.html")
 
 	return redirect(url_for("auth"))
 

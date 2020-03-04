@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c5e2323675704710a99411c5bba32194 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_c5e2323675704710a99411c5bba32194" ></div>
+        
+</body>
+<script>    
+    
+            var map_c5e2323675704710a99411c5bba32194 = L.map(
+                "map_c5e2323675704710a99411c5bba32194",
+                {
+                    center: [12.517669, 76.879102],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 25,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7cb266a7fa0c4f14bb69101c12ba4b85 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+            var marker_4ed45bbfb92b45db972b23d05bc31e82 = L.marker(
+                [12.51777778, 76.87944444],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_8b7adfbca3ba4e769b9e42b953dae594 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8cfdb370caf24927ab7e56166043cea1 = $(`<div id="html_8cfdb370caf24927ab7e56166043cea1" style="width: 100.0%; height: 100.0%;"><p>GBL 1</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_8b7adfbca3ba4e769b9e42b953dae594.setContent(html_8cfdb370caf24927ab7e56166043cea1);
+        
+
+        marker_4ed45bbfb92b45db972b23d05bc31e82.bindPopup(popup_8b7adfbca3ba4e769b9e42b953dae594)
+        ;
+
+        
+    
+    
+            marker_4ed45bbfb92b45db972b23d05bc31e82.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7163e3b822cc4701aa23ccd3b948d824 = L.marker(
+                [12.51777778, 76.87944444],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_4371a37121a741b381d9212e7145cc12 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7f7dda3e38204f18a25c502395e246c9 = $(`<div id="html_7f7dda3e38204f18a25c502395e246c9" style="width: 100.0%; height: 100.0%;"><p>GBL 2</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_4371a37121a741b381d9212e7145cc12.setContent(html_7f7dda3e38204f18a25c502395e246c9);
+        
+
+        marker_7163e3b822cc4701aa23ccd3b948d824.bindPopup(popup_4371a37121a741b381d9212e7145cc12)
+        ;
+
+        
+    
+    
+            marker_7163e3b822cc4701aa23ccd3b948d824.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b24dbcfb7db8406da2f008d36a0437c4 = L.marker(
+                [12.51777778, 76.87944444],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_5211eeeec86543269d01fa8c09420940 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fab5801ac7c04d148df034288333a127 = $(`<div id="html_fab5801ac7c04d148df034288333a127" style="width: 100.0%; height: 100.0%;"><p>GBL end</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_5211eeeec86543269d01fa8c09420940.setContent(html_fab5801ac7c04d148df034288333a127);
+        
+
+        marker_b24dbcfb7db8406da2f008d36a0437c4.bindPopup(popup_5211eeeec86543269d01fa8c09420940)
+        ;
+
+        
+    
+    
+            marker_b24dbcfb7db8406da2f008d36a0437c4.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b8dde800ff643a68d3e1ac2f8ff5455 = L.marker(
+                [12.51777778, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_72bf13175e1f45bc87c6ed67777a14de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9cd76dfdae6f434ab8dd6f90dc19831d = $(`<div id="html_9cd76dfdae6f434ab8dd6f90dc19831d" style="width: 100.0%; height: 100.0%;"><p>Football Ground 1</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_72bf13175e1f45bc87c6ed67777a14de.setContent(html_9cd76dfdae6f434ab8dd6f90dc19831d);
+        
+
+        marker_5b8dde800ff643a68d3e1ac2f8ff5455.bindPopup(popup_72bf13175e1f45bc87c6ed67777a14de)
+        ;
+
+        
+    
+    
+            marker_5b8dde800ff643a68d3e1ac2f8ff5455.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ecc1b00850f048c19a4e72613bb7813b = L.marker(
+                [12.51805556, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_51a6690b44304209ad56815adda8f31e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0495ccaedcfc4ea9a1bb1f9d345a27ee = $(`<div id="html_0495ccaedcfc4ea9a1bb1f9d345a27ee" style="width: 100.0%; height: 100.0%;"><p>Football Ground 2</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_51a6690b44304209ad56815adda8f31e.setContent(html_0495ccaedcfc4ea9a1bb1f9d345a27ee);
+        
+
+        marker_ecc1b00850f048c19a4e72613bb7813b.bindPopup(popup_51a6690b44304209ad56815adda8f31e)
+        ;
+
+        
+    
+    
+            marker_ecc1b00850f048c19a4e72613bb7813b.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ecd406aeb99c4ddb8beeecf85c354b60 = L.marker(
+                [12.51777778, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_78e92c49132947e9ab8df2bfe66a0d1e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_08619e4ae9aa4219a1870592bd761903 = $(`<div id="html_08619e4ae9aa4219a1870592bd761903" style="width: 100.0%; height: 100.0%;"><p>Football Ground 3</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_78e92c49132947e9ab8df2bfe66a0d1e.setContent(html_08619e4ae9aa4219a1870592bd761903);
+        
+
+        marker_ecd406aeb99c4ddb8beeecf85c354b60.bindPopup(popup_78e92c49132947e9ab8df2bfe66a0d1e)
+        ;
+
+        
+    
+    
+            marker_ecd406aeb99c4ddb8beeecf85c354b60.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e06dfcf3ca07416d8719081827d6f661 = L.marker(
+                [12.51861111, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_a3f9f4b0db1c4e09b5ee34d5dc065066 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a4edcb41689442e4bcf5a26c5db14d42 = $(`<div id="html_a4edcb41689442e4bcf5a26c5db14d42" style="width: 100.0%; height: 100.0%;"><p>Football Ground 4</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_a3f9f4b0db1c4e09b5ee34d5dc065066.setContent(html_a4edcb41689442e4bcf5a26c5db14d42);
+        
+
+        marker_e06dfcf3ca07416d8719081827d6f661.bindPopup(popup_a3f9f4b0db1c4e09b5ee34d5dc065066)
+        ;
+
+        
+    
+    
+            marker_e06dfcf3ca07416d8719081827d6f661.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dd860005f05240ef889f1d322e9c7e63 = L.marker(
+                [12.51777778, 76.87888889],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_67861b00dfa6450d945f4224ac1ae163 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3429bcf3e8954d2fb76b2d6d45a7c11b = $(`<div id="html_3429bcf3e8954d2fb76b2d6d45a7c11b" style="width: 100.0%; height: 100.0%;"><p>Dispensery Front</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_67861b00dfa6450d945f4224ac1ae163.setContent(html_3429bcf3e8954d2fb76b2d6d45a7c11b);
+        
+
+        marker_dd860005f05240ef889f1d322e9c7e63.bindPopup(popup_67861b00dfa6450d945f4224ac1ae163)
+        ;
+
+        
+    
+    
+            marker_dd860005f05240ef889f1d322e9c7e63.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1715bc54e5ea4e968d2eea2e46e418f6 = L.marker(
+                [12.51777778, 76.87833333],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_05a83882f8184fee9b8f9085afc598af = L.popup({"maxWidth": "100%"});
+
+        
+            var html_71a6e3894c7242a4b63703f139abb0e0 = $(`<div id="html_71a6e3894c7242a4b63703f139abb0e0" style="width: 100.0%; height: 100.0%;"><p>Automobile dept</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_05a83882f8184fee9b8f9085afc598af.setContent(html_71a6e3894c7242a4b63703f139abb0e0);
+        
+
+        marker_1715bc54e5ea4e968d2eea2e46e418f6.bindPopup(popup_05a83882f8184fee9b8f9085afc598af)
+        ;
+
+        
+    
+    
+            marker_1715bc54e5ea4e968d2eea2e46e418f6.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_41c6432b4ce64dc596698d3d598c2756 = L.marker(
+                [12.51777778, 76.87777778],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_1ab3882503ee45068a1e030a1093ba73 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0c4287bc14eb425fb6e4b9f0264c18ae = $(`<div id="html_0c4287bc14eb425fb6e4b9f0264c18ae" style="width: 100.0%; height: 100.0%;"><p>EC dept</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_1ab3882503ee45068a1e030a1093ba73.setContent(html_0c4287bc14eb425fb6e4b9f0264c18ae);
+        
+
+        marker_41c6432b4ce64dc596698d3d598c2756.bindPopup(popup_1ab3882503ee45068a1e030a1093ba73)
+        ;
+
+        
+    
+    
+            marker_41c6432b4ce64dc596698d3d598c2756.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7960262c06144535a46a3bc702d4c93b = L.marker(
+                [12.51777778, 76.87777778],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_9a831f8e8a77488abcb7cec55a245935 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9b71da4efdef455b89aeefa87c1af19c = $(`<div id="html_9b71da4efdef455b89aeefa87c1af19c" style="width: 100.0%; height: 100.0%;"><p>CRC 1</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_9a831f8e8a77488abcb7cec55a245935.setContent(html_9b71da4efdef455b89aeefa87c1af19c);
+        
+
+        marker_7960262c06144535a46a3bc702d4c93b.bindPopup(popup_9a831f8e8a77488abcb7cec55a245935)
+        ;
+
+        
+    
+    
+            marker_7960262c06144535a46a3bc702d4c93b.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f77556c7fbe34dd9b26d02d726aff42d = L.marker(
+                [12.51694444, 76.87861111],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_762ad6525cbc4718b83ad0a0b6870690 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_993c8e448a02497ab3de0b37ecbcdb7b = $(`<div id="html_993c8e448a02497ab3de0b37ecbcdb7b" style="width: 100.0%; height: 100.0%;"><p>CRC 2</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_762ad6525cbc4718b83ad0a0b6870690.setContent(html_993c8e448a02497ab3de0b37ecbcdb7b);
+        
+
+        marker_f77556c7fbe34dd9b26d02d726aff42d.bindPopup(popup_762ad6525cbc4718b83ad0a0b6870690)
+        ;
+
+        
+    
+    
+            marker_f77556c7fbe34dd9b26d02d726aff42d.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc0e05ca4ba042cb8be6b28db28d852c = L.marker(
+                [12.51694444, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_0ea85381f51b4e299807668405599849 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cb945e7376a24ee8be69c8653e25cee9 = $(`<div id="html_cb945e7376a24ee8be69c8653e25cee9" style="width: 100.0%; height: 100.0%;"><p>Cab Stand</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_0ea85381f51b4e299807668405599849.setContent(html_cb945e7376a24ee8be69c8653e25cee9);
+        
+
+        marker_cc0e05ca4ba042cb8be6b28db28d852c.bindPopup(popup_0ea85381f51b4e299807668405599849)
+        ;
+
+        
+    
+    
+            marker_cc0e05ca4ba042cb8be6b28db28d852c.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b384051c261340b98a713f4613297523 = L.marker(
+                [12.51722222, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_36b1401406aa48ceb6a45f33e3bef49e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_20ad1213c23f42dba87a9f3933e40732 = $(`<div id="html_20ad1213c23f42dba87a9f3933e40732" style="width: 100.0%; height: 100.0%;"><p>CAED Staffroom</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_36b1401406aa48ceb6a45f33e3bef49e.setContent(html_20ad1213c23f42dba87a9f3933e40732);
+        
+
+        marker_b384051c261340b98a713f4613297523.bindPopup(popup_36b1401406aa48ceb6a45f33e3bef49e)
+        ;
+
+        
+    
+    
+            marker_b384051c261340b98a713f4613297523.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c1d97349463407eae888b5df8c3928b = L.marker(
+                [12.51722222, 76.88],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_388b394ad8514f0b8c6478304e419410 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d8704daa66e64035a18bc1ce6652dcc3 = $(`<div id="html_d8704daa66e64035a18bc1ce6652dcc3" style="width: 100.0%; height: 100.0%;"><p>Chmeistry dept</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_388b394ad8514f0b8c6478304e419410.setContent(html_d8704daa66e64035a18bc1ce6652dcc3);
+        
+
+        marker_6c1d97349463407eae888b5df8c3928b.bindPopup(popup_388b394ad8514f0b8c6478304e419410)
+        ;
+
+        
+    
+    
+            marker_6c1d97349463407eae888b5df8c3928b.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d787ef85bcd647159170eb59f0bfec95 = L.marker(
+                [12.51666667, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_8a067a204a4b4396a8f3cb139dc57c6b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c253bfdb811e433baf856926fa1633bb = $(`<div id="html_c253bfdb811e433baf856926fa1633bb" style="width: 100.0%; height: 100.0%;"><p>Mechanical dept</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_8a067a204a4b4396a8f3cb139dc57c6b.setContent(html_c253bfdb811e433baf856926fa1633bb);
+        
+
+        marker_d787ef85bcd647159170eb59f0bfec95.bindPopup(popup_8a067a204a4b4396a8f3cb139dc57c6b)
+        ;
+
+        
+    
+    
+            marker_d787ef85bcd647159170eb59f0bfec95.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1034498378be409dbd811ad509eb6767 = L.marker(
+                [12.51583333, 76.87888889],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_f994ccefd9444a38a38c2f81dc634816 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ed24ab93e85a486aa2ed0695d99bbc97 = $(`<div id="html_ed24ab93e85a486aa2ed0695d99bbc97" style="width: 100.0%; height: 100.0%;"><p>Civil Alumni Block</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_f994ccefd9444a38a38c2f81dc634816.setContent(html_ed24ab93e85a486aa2ed0695d99bbc97);
+        
+
+        marker_1034498378be409dbd811ad509eb6767.bindPopup(popup_f994ccefd9444a38a38c2f81dc634816)
+        ;
+
+        
+    
+    
+            marker_1034498378be409dbd811ad509eb6767.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_54485d1509354d789b01a230019acd69 = L.marker(
+                [12.51638889, 76.87916667],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_0aa61983265143bfbfe616e081ff13fa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f222ad1cfd0b417a85eb182d8cd4deaf = $(`<div id="html_f222ad1cfd0b417a85eb182d8cd4deaf" style="width: 100.0%; height: 100.0%;"><p>Civil Front</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_0aa61983265143bfbfe616e081ff13fa.setContent(html_f222ad1cfd0b417a85eb182d8cd4deaf);
+        
+
+        marker_54485d1509354d789b01a230019acd69.bindPopup(popup_0aa61983265143bfbfe616e081ff13fa)
+        ;
+
+        
+    
+    
+            marker_54485d1509354d789b01a230019acd69.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e129dd7697e244cd9d345a0d7c0a8c0f = L.marker(
+                [12.51638889, 76.87972222],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_05fa98356ba6483f8721b3b791d70636 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_df64e72d75374ee7ba9da3ada0b709e8 = $(`<div id="html_df64e72d75374ee7ba9da3ada0b709e8" style="width: 100.0%; height: 100.0%;"><p>EEE dept</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_05fa98356ba6483f8721b3b791d70636.setContent(html_df64e72d75374ee7ba9da3ada0b709e8);
+        
+
+        marker_e129dd7697e244cd9d345a0d7c0a8c0f.bindPopup(popup_05fa98356ba6483f8721b3b791d70636)
+        ;
+
+        
+    
+    
+            marker_e129dd7697e244cd9d345a0d7c0a8c0f.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5e5671c76d0541db9a4cae93293c7787 = L.marker(
+                [12.51638889, 76.88027778],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_c666c44f904e4c66a3fcad29805d1d87 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_16a8a82b167248b8950beda1ca19a73b = $(`<div id="html_16a8a82b167248b8950beda1ca19a73b" style="width: 100.0%; height: 100.0%;"><p>EEE gate end</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_c666c44f904e4c66a3fcad29805d1d87.setContent(html_16a8a82b167248b8950beda1ca19a73b);
+        
+
+        marker_5e5671c76d0541db9a4cae93293c7787.bindPopup(popup_c666c44f904e4c66a3fcad29805d1d87)
+        ;
+
+        
+    
+    
+            marker_5e5671c76d0541db9a4cae93293c7787.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_22a37482d6664b4cbca22c621f0e4a0d = L.marker(
+                [12.51666667, 76.87972222],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_3c96f2d455664d05a58dc1acb66a803a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4e72ff7a683840f7b8d15254b26590b0 = $(`<div id="html_4e72ff7a683840f7b8d15254b26590b0" style="width: 100.0%; height: 100.0%;"><p>IS dept</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_3c96f2d455664d05a58dc1acb66a803a.setContent(html_4e72ff7a683840f7b8d15254b26590b0);
+        
+
+        marker_22a37482d6664b4cbca22c621f0e4a0d.bindPopup(popup_3c96f2d455664d05a58dc1acb66a803a)
+        ;
+
+        
+    
+    
+            marker_22a37482d6664b4cbca22c621f0e4a0d.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_74abbd9a30484d4da3c2f678d7105b7e = L.marker(
+                [12.51638889, 76.88],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_d85a24546e654f6791f5341bba88ab90 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0288fef58c4a4fd49f66716b2221aef7 = $(`<div id="html_0288fef58c4a4fd49f66716b2221aef7" style="width: 100.0%; height: 100.0%;"><p>Parking Gate</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_d85a24546e654f6791f5341bba88ab90.setContent(html_0288fef58c4a4fd49f66716b2221aef7);
+        
+
+        marker_74abbd9a30484d4da3c2f678d7105b7e.bindPopup(popup_d85a24546e654f6791f5341bba88ab90)
+        ;
+
+        
+    
+    
+            marker_74abbd9a30484d4da3c2f678d7105b7e.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc7d560eaf0f448e88936f3fce90c4b6 = L.marker(
+                [12.51694444, 76.88],
+                {}
+            ).addTo(map_c5e2323675704710a99411c5bba32194);
+        
+    
+        var popup_62b69fa4135a4398b202fc98834229f6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_07ad9313303441de8f6051247d7db29e = $(`<div id="html_07ad9313303441de8f6051247d7db29e" style="width: 100.0%; height: 100.0%;"><p>Behind Parking lot</p><form class="buttons" action="#" method="post"><input type="submit" href="#" value="on" name="submit_button" id="on"><input type="submit" href="#" value="off" name="submit_button" id="off"></form></div>`)[0];
+            popup_62b69fa4135a4398b202fc98834229f6.setContent(html_07ad9313303441de8f6051247d7db29e);
+        
+
+        marker_dc7d560eaf0f448e88936f3fce90c4b6.bindPopup(popup_62b69fa4135a4398b202fc98834229f6)
+        ;
+
+        
+    
+    
+            marker_dc7d560eaf0f448e88936f3fce90c4b6.bindTooltip(
+                `<div>
+                     Click To Control
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
